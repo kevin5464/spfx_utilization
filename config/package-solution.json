@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "utilization-client-side-solution",
+    "id": "1b9c6291-0e98-41d2-9034-0d88f945e7d1",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/utilization.sppkg"
+  }
+}

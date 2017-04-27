@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/utilizationTool/UtilizationToolWebPart.js",
+      "manifest": "./src/webparts/utilizationTool/UtilizationToolWebPart.manifest.json",
+      "outputPath": "./dist/utilization-tool.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "utilizationToolStrings": "webparts/utilizationTool/loc/{locale}.js"
+  }
+}
