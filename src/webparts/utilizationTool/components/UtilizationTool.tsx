@@ -1,25 +1,56 @@
-import * as React from 'react';
+﻿import * as React from 'react';
+import { Doughnut } from 'react-chartjs-2';
 import styles from './UtilizationTool.module.scss';
 import { IUtilizationToolProps } from './IUtilizationToolProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-export default class UtilizationTool extends React.Component<IUtilizationToolProps, void> {
-  public render(): React.ReactElement<IUtilizationToolProps> {
-    return (
-      <div className={styles.helloWorld}>
-        <div className={styles.container}>
-          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p className="ms-font-l ms-fontColor-white">{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
-              </a>
+export default class UtilizationTool extends React.Component<IUtilizationToolProps, any> {
+    
+    constructor() {
+        super();
+        this.state = {
+            chartData: {
+
+            },
+            chartOptions: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+    }
+
+    public render(): React.ReactElement<IUtilizationToolProps> {
+        return (
+            <div className={styles.helloWorld}>
+                <Doughnut data={this.state.chartData} options={this.state.chartOptions} />
             </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+        );
+    }
+
+    public componentDidMount() {
+        this.createChart();
+    }
+
+    private createChart(): void {
+        this.setState({
+            chartData: {
+                labels: ["Client Billable", "Client Non-Billable", "PTO", "Company Holiday"],
+                datasets: [{
+                    backgroundColor: [
+                        "#2ecc71",
+                        "#3498db",
+                        "#95a5a6",
+                        "#9b59b6",
+                        "#f1c40f",
+                        "#e74c3c",
+                        "#34495e"
+                    ],
+                    data: [67, 13, 8, 12]
+                }]
+            }
+        })
+    }
+
+
 }

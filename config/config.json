@@ -1,4 +1,4 @@
-{
+﻿{
   "entries": [
     {
       "entry": "./lib/webparts/utilizationTool/UtilizationToolWebPart.js",
@@ -6,7 +6,16 @@
       "outputPath": "./dist/utilization-tool.bundle.js"
     }
   ],
-  "externals": {},
+  "externals": {
+    //"@microsoft/sp-client-base": "node_modules/@microsoft/sp-client-base/dist/sp-client-base.js",
+    //"@microsoft/sp-client-preview": "node_modules/@microsoft/sp-client-preview/dist/sp-client-preview.js",
+    //"@microsoft/sp-lodash-subset": "node_modules/@microsoft/sp-lodash-subset/dist/sp-lodash-subset.js",
+    //"office-ui-fabric-react": "node_modules/office-ui-fabric-react/dist/office-ui-fabric-react.js",
+    //"react": "node_modules/react/dist/react.min.js",
+    //"react-dom": "node_modules/react-dom/dist/react-dom.min.js",
+    //"chart.js": "./node_modules/chart.js/dist/chart.js",
+    //"react-chartjs-2": "./node_modules/react-chartjs-2/dist/react-chartjs-2.js"
+  },
   "localizedResources": {
     "utilizationToolStrings": "webparts/utilizationTool/loc/{locale}.js"
   }
