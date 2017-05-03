@@ -1,4 +1,4 @@
-import * as React from 'react';
+﻿import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
@@ -18,7 +18,8 @@ export default class UtilizationToolWebPart extends BaseClientSideWebPart<IUtili
     const element: React.ReactElement<IUtilizationToolProps > = React.createElement(
       UtilizationTool,
       {
-        description: this.properties.description
+          description: this.properties.description,
+          context: this.context          
       }
     );
 
